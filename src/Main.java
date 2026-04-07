@@ -1,6 +1,7 @@
 //Alhanouf Allazzam
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -24,7 +25,6 @@ public class Main {
         printWords(longestWords);//method to print the words
 
 
-
 //        2. Write a program that displays the number of occurrences of an element in the array.
 //        Original Array:
 //        [1,1,1,3,3,5]
@@ -32,7 +32,7 @@ public class Main {
 //        3 occurs 2 times
 //        1 occurs 3 times
 //        9 occurs 0 time
-        System.out.println("-----------------------");
+        System.out.println("\n\n-----------------------");
         System.out.println("EXERCISE #2");
         System.out.println("-----------------------");
 
@@ -41,7 +41,7 @@ public class Main {
         System.out.print("Please enter number: ");
         int userNumber = input.nextInt();
 
-        System.out.println("Number " + userNumber + " occurs " + numberOfOccurrences(userNumber,numbers) + " times");
+        System.out.println("Number " + userNumber + " occurs " + countOccurrences(userNumber,numbers) + " times");
 
 
         //EXTRA for EX2 - display the number of occurrences for every number in the array
@@ -54,7 +54,41 @@ public class Main {
         System.out.println(occurrences);
 
 
+//        3. Write a program to find the k largest elements in a given array. Elements in the array can be in any order.
+//        Original Array:
+//        [1, 4, 17, 7, 25, 3, 100]
+//        Expected Output:
+//        3 largest elements of the said array are:
+//        100 25 17
+        System.out.println("\n-----------------------");
+        System.out.println("EXERCISE #3");
+        System.out.println("-----------------------");
 
+        int[] numbers2 = {1, 4, 17, 7, 25, 3, 100};
+        System.out.print("Please enter how many numbers you want: ");
+        int k = input.nextInt();
+
+        Arrays.sort(numbers2);
+
+        System.out.print(k + " largest elements of the said array are: ");
+        for(int i = 0; i < k; i++){
+            System.out.print(numbers2[numbers2.length-1-i] + " ");
+        }
+
+
+//        4. Create a method to reverse an array of integers. Implement the method without creating a new array.
+//        Original Array:
+//        [5,4,3,2,1]
+//        Expected Output:
+//        Reversed Array: 12345
+        System.out.println("\n\n-----------------------");
+        System.out.println("EXERCISE #4");
+        System.out.println("-----------------------");
+
+        int[] array = {5, 4, 3, 2, 1};
+        reverse(array);
+        System.out.print("Reversed Array: ");
+        printArray(array);
 
 
 
@@ -90,7 +124,7 @@ public class Main {
 
 
     //EXERCISE #2
-    public static int numberOfOccurrences(int number, int[] numbers){
+    public static int countOccurrences(int number, int[] numbers){
         int occurrences = 0;
         for(int n : numbers){
             if(n == number)
@@ -121,5 +155,20 @@ public class Main {
         return -1;
     }
 
+
+    //EXERCISE #4
+    public static void reverse(int[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            int temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+    }
+
+    public static void printArray(int[] array){
+        for(int a : array){
+            System.out.print(a + " ");
+        }
+    }
 
 }
