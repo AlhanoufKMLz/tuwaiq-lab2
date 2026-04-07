@@ -158,7 +158,7 @@ public class Main {
                         break;
                     }
 
-                    Arrays.sort(elements);
+                    sortElements(elements);
                     System.out.println("Elements after sort: ");
                     displayElements(elements);
                     break;
@@ -379,6 +379,18 @@ public class Main {
                 return i;
         }
         return -1;
+    }
+
+    public static void sortElements(int[] elements){
+        for (int i = 0; i < elements.length; i++) {
+            for (int j = i; j < elements.length; j++) {
+                if (elements[i] > elements[j ]) {
+                    int temp = elements[i];
+                    elements[i] = elements[j];
+                    elements[j] = temp;
+                }
+            }
+        }
     }
 
 
