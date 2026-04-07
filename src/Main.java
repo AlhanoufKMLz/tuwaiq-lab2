@@ -71,7 +71,7 @@ public class Main {
         System.out.print("Please enter how many numbers you want: ");
         int k = input.nextInt();
 
-        Arrays.sort(numbers2);
+        sortElements(numbers2);
 
         System.out.print(k + " largest elements of the said array are: ");
         for(int i = 0; i < k; i++){
@@ -334,7 +334,7 @@ public class Main {
             array[array.length - 1 - i] = temp;
         }
     }
-
+                //used in ex 4 and 8
     public static void printArray(int[] array){
         for(int a : array){
             System.out.print(a + " ");
@@ -380,7 +380,7 @@ public class Main {
         }
         return -1;
     }
-
+                //used in ex 5 and 3
     public static void sortElements(int[] elements){
         for (int i = 0; i < elements.length; i++) {
             for (int j = i; j < elements.length; j++) {
