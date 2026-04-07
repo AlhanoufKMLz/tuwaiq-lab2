@@ -357,7 +357,7 @@ public class Main {
         for(int i = 0; i < elements.length; i++){
             System.out.print("Please enter element to add: ");
             elements[i] = Integer.parseInt(input.nextLine());
-            System.out.println("element added successfully:)");
+            System.out.println("element added successfully.");
         }
 
     }
