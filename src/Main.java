@@ -111,6 +111,7 @@ public class Main {
         input.nextLine();//clean buffer
 
         int[] elements = new int[size];
+        boolean isFilled = false;
 
         String choice;
         do{
@@ -122,13 +123,24 @@ public class Main {
             switch (choice){
                 case "1":
                     acceptElements(elements, input);
+                    isFilled = true;
                     break;
                 case "2":
+                    if(!isFilled){
+                        System.out.println("Array is empty, please fill the array first.");
+                        break;
+                    }
+
                     System.out.println("Elements: ");
                     displayElements(elements);
                     break;
 
                 case "3":
+                    if(!isFilled){
+                        System.out.println("Array is empty, please fill the array first.");
+                        break;
+                    }
+
                     System.out.print("Please enter the element you want to search: ");
                     int element = Integer.parseInt(input.nextLine());
 
@@ -141,6 +153,11 @@ public class Main {
                     break;
 
                 case "4":
+                    if(!isFilled){
+                        System.out.println("Array is empty, please fill the array first.");
+                        break;
+                    }
+
                     Arrays.sort(elements);
                     System.out.println("Elements after sort: ");
                     displayElements(elements);
@@ -346,11 +363,6 @@ public class Main {
     }
 
     public static void displayElements(int[] elements){
-        if(elements.length == 0){
-            System.out.println("There is no elements.");
-            return;
-        }
-
         System.out.print("[");
         for (int i = 0; i < elements.length; i++) {
             if (i == elements.length - 1)
